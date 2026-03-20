@@ -133,23 +133,6 @@ private:
 
 	}
 
-
-	/*static string _PrePareTransferLogRecord(double Amount, clsBankClient DestinationClient, string UserName, string sperator = "#//#")
-	{
-		string TransferLogRecord = "";
-
-		TransferLogRecord += clsDate::GetSystemDateTimeString() + sperator;
-		TransferLogRecord += AccountNumber() + sperator;
-		TransferLogRecord += to_string(AccountBalance()) + sperator;
-		TransferLogRecord += DestinationClient.AccountNumber() + sperator;
-		TransferLogRecord += to_string(DestinationClient.AccountBalance) + sperator;
-		TransferLogRecord += to_string(Amount) + sperator;
-		TransferLogRecord += UserName;
-
-		return TransferLogRecord;
-
-	}*/
-
 	static vector<stTransfer> _LoadTransfersDataFromFile()
 	{
 		vector<stTransfer>vTransfer;
