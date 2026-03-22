@@ -88,7 +88,7 @@ The system stores data using **text files**, for example:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/bank-system-cpp.git
+git clone https://github.com/ahmedmfh164-hash/Bank-System-oop.git
 ```
 
 2. Open the project using **Visual Studio**
@@ -128,10 +128,3 @@ GitHub:
 ## ⭐ Support
 
 If you like this project, please give it a ⭐ on GitHub.
-
----
-
-لو تحب، أقدر أيضًا:
-
-* أعمل لك **README احترافي أكثر مع صور وشارات GitHub**
-* أو **أعدله ليظهر بشكل قوي في البروفايل** مثل مشاريع المحترفين.
