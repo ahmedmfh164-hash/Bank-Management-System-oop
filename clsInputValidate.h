@@ -64,7 +64,7 @@ public:
 		while (!(cin >> Number))
 		{
 			cin.clear();
-			cin.ignore( '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 			cout << Message;
 		}
 
@@ -78,7 +78,7 @@ public:
 		while (!(cin >> Number))
 		{
 			cin.clear();
-			cin.ignore( '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 			cout << Message;
 		}
 
@@ -92,7 +92,7 @@ public:
 		while (!(cin >> Number))
 		{
 			cin.clear();
-			cin.ignore( '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(),'\n');
 			cout << Message;
 		}
 
@@ -132,7 +132,7 @@ public:
 		while (!(cin >> Number))
 		{
 			cin.clear();
-			cin.ignore( '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 			cout << Message;
 		}
 
@@ -146,7 +146,7 @@ public:
 		while (!(cin >> S1))
 		{
 			cin.clear();
-			cin.ignore( '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 			cout << Message;
 		}
 
