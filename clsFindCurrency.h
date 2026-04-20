@@ -1,12 +1,40 @@
 #pragma once
+#include <limits>
 #include"clsCurrency.h"
 #include"clsScreen.h"
 #include"clsInputValidate.h"
 #include"clsUtil.h"
+#include"clsString.h"
 
 class clsFindCurrency:protected clsScreen
 {
 private:
+
+    static short _ReadOption()
+    {
+        short Number;
+
+        while (true)
+        {
+            clsUtil::SetColor(1);
+            cout << "\nplease enter [1]Code Or [2]Country ? ";
+            clsUtil::SetColor(3);
+            cin >> Number;
+
+            if (!cin.fail() && Number >= 1 && Number <= 2)
+            {
+                cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+                return Number;
+            }
+
+            cin.clear();
+            cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+
+            clsUtil::SetColor(4);
+            cout << "\nInvalid Entry! Try Again: ";
+            clsUtil::SetColor(3);
+        }
+    }
 
     static void _PrintCurrency(clsCurrency Currency)
     {
@@ -44,15 +72,12 @@ public:
         cout << setw(8) << left << "" << "__________________________________________________________________";
         cout << "__________________________________________\n";
 
-        short Answer =1;
         string Country, CurrencyCode;
 
-        clsUtil::SetColor(1);
-        cout << "\nplease enter [1]Code Or [2]Country ? ";
-        clsUtil::SetColor(3);
-        cin >> Answer;
+        short Answer = _ReadOption();
 
-            if (Answer == 1)
+
+            if (Answer==1)
             {
                 clsUtil::SetColor(1);
                 cout << "\nplease enter Currency Code ? ";
@@ -60,19 +85,29 @@ public:
                 CurrencyCode = clsInputValidate::ReadString();
                 clsCurrency Currency = clsCurrency::FindByCode(CurrencyCode);
                 _ShowResults(Currency);
-
             }
-            else 
+            else
             {
                 clsUtil::SetColor(1);
                 cout << "\nplease enter Country ? ";
                 clsUtil::SetColor(3);
                 Country = clsInputValidate::ReadString();
                 clsCurrency Currency = clsCurrency::FindByCountry(Country);
-                 _ShowResults(Currency);
-
+                _ShowResults(Currency);
             }
          
+            char again = 'n';
+            clsUtil::SetColor(1);
+            cout << "\nAre you want to find another Currency ? y/n ? ";
+            clsUtil::SetColor(3);
+            cin >> again;
+
+            if (again == 'y' || again == 'Y')
+            {
+                system("cls");
+                ShowFindCurrencyScreen();
+            }
+
 
     }
 
